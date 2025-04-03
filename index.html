@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Observação SAC</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload="carregarHistorico()">
+    <div class="container">
+        <h2>Gerador de Observação - SAC</h2>
+        <button id="modoEscuro" class="btn-dark" onclick="alternarModo()">🌙 Modo Escuro</button>
+        
+        <label>Nome do beneficiário(a)</label>
+        <input type="text" id="nome" placeholder="Digite o nome">
+
+        <label>Tipo</label>
+        <select id="tipo">
+            <option value="Titular">Titular</option>
+            <option value="Dependente">Dependente</option>
+            <option value="Representante">Representante</option>
+        </select>
+
+        <label>Classificação da demanda</label>
+        <select id="classificacao">
+            <option value="Reclama">Reclama</option>
+            <option value="Solicita">Solicita</option>
+            <option value="Elogia">Elogia</option>
+            <option value="Sugere">Sugere</option>
+            <option value="Informa">Informa</option>
+        </select>
+
+        <label>Descrição</label>
+        <input type="text" id="descricao" placeholder="Descreva o ocorrido ou necessidade">
+
+        <label>Data e horário</label>
+        <input type="datetime-local" id="data">
+
+        <label>Local</label>
+        <input type="text" id="local" placeholder="Onde aconteceu ou precisa">
+
+        <div class="btn-group">
+            <button class="btn" onclick="gerarFrase()">Gerar Frase</button>
+            <button class="btn limpar" onclick="limparCampos()">Limpar</button>
+        </div>
+        
+        <div class="output" id="resultado"></div>
+        <button id="copiar" class="btn copiar" onclick="copiarFrase()" style="display:none;">Copiar Frase</button>
+        
+        <h3>Histórico</h3>
+        <ul id="historico"></ul>
+        <button class="btn limpar" onclick="limparHistorico()">Limpar Histórico</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
